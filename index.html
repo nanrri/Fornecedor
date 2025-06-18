@@ -1,116 +1,145 @@
 <!DOCTYPE html><html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Os Melhores Fornecedores | Haype Connect</title>
-  <style>
-    body {
-      background-color: #000;
-      color: white;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-    }
-    header {
-      text-align: center;
-      padding: 50px 20px;
-    }
-    header h1 {
-      color: #00ff7f;
-      font-size: 48px;
-      text-shadow: 0 0 15px #00ff7f;
-      font-family: 'Courier New', Courier, monospace;
-    }
-    header p {
-      color: #aaa;
-      font-size: 18px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .button {
-      display: block;
-      width: fit-content;
-      margin: 40px auto;
-      padding: 15px 30px;
-      background-color: #00ff7f;
-      color: #000;
-      border: none;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 15px #00ff7f;
-      transition: 0.3s;
-    }
-    .button:hover {
-      background-color: #00cc66;
-      box-shadow: 0 0 25px #00ff7f;
-    }
-    .popup {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: rgba(0,0,0,0.8);
-      color: #00ff7f;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-size: 14px;
-      display: none;
-      animation: fadein 0.5s;
-    }
-    @keyframes fadein {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 24px;
-      text-decoration: none;
-      box-shadow: 0 0 10px #25d366;
-      transition: 0.3s;
-    }
-    .whatsapp:hover {
-      background-color: #128c7e;
-      box-shadow: 0 0 20px #25d366;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="description" content="Os melhores fornecedores de roupas e tênis premium. Acesso imediato e com segurança.">
+    <meta name="keywords" content="fornecedores, roupas, tênis, atacado, TNS, Air Max, loja, moda, dropshipping">
+    <meta name="author" content="Fontes das Fontes Oficial">
+    <meta property="og:title" content="Os Melhores Fornecedores | Fontes das Fontes">
+    <meta property="og:description" content="Acesse os fornecedores premium de roupas e tênis. Tudo na palma da sua mão.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fontedasfontesoficial.com.br/">
+    <title>Fontes das Fontes | Fornecedores Premium</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #00ff55;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #000;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+        }
+        nav a {
+            color: #00ff55;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        .section {
+            padding: 40px;
+            text-align: center;
+        }
+        .section h2 {
+            color: #00ff55;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .item {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .item:hover {
+            transform: scale(1.05);
+        }
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .item h3 {
+            margin-top: 15px;
+            color: #00ff55;
+        }
+        .item p {
+            color: #ccc;
+        }
+        footer {
+            background-color: #00ff55;
+            text-align: center;
+            padding: 15px;
+            color: #000;
+        }
+    </style>
 </head>
-<body><header>
-  <h1>Os Melhores Fornecedores</h1>
-  <p>Roupas, tênis e muito mais com preço de fornecedor 🔥</p>
-</header><section class="gallery">
-  <img src="https://via.placeholder.com/300x300?text=T%C3%AAnis+1" alt="Tênis 1">
-  <img src="https://via.placeholder.com/300x300?text=Roupa+1" alt="Roupa 1">
-  <img src="https://via.placeholder.com/300x300?text=T%C3%AAnis+2" alt="Tênis 2">
-  <img src="https://via.placeholder.com/300x300?text=Roupa+2" alt="Roupa 2">
-</section><a class="button" href="https://seulinkdecheckoutkiwify.com" target="_blank">Comprar Agora</a>
-
-<div class="popup" id="popup">Alguém acabou de comprar!</div><a class="whatsapp" href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank">💬</a>
-
-<script>
-  const popup = document.getElementById('popup');
-  setInterval(() => {
-    popup.style.display = 'block';
-    setTimeout(() => {
-      popup.style.display = 'none';
-    }, 3000);
-  }, 10000);
-</script></body>
+<body>
+    <header>
+        <h1>Fontes das Fontes</h1>
+    </header>
+    <nav>
+        <a href="#fornecedores">Fornecedores</a>
+        <a href="#tenis">Tênis</a>
+        <a href="#roupas">Roupas</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <div class="section" id="fornecedores">
+        <h2>Fornecedores Premium</h2>
+        <p>Os melhores fornecedores de tênis, roupas e acessórios com qualidade e preço de fábrica.</p>
+    </div>
+    <div class="section" id="tenis">
+        <h2>Tênis</h2>
+        <div class="gallery">
+            <div class="item" onclick="alert('Fornecedor Tênis 1')">
+                <img src="tenis1.png" alt="Tênis 1">
+                <h3>Tênis Air Max Plus</h3>
+                <p>Clique para ver fornecedor</p>
+            </div>
+            <div class="item" onclick="alert('Fornecedor Tênis 2')">
+                <img src="tenis2.png" alt="Tênis 2">
+                <h3>Tênis Jordan</h3>
+                <p>Clique para ver fornecedor</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="roupas">
+        <h2>Roupas</h2>
+        <div class="gallery">
+            <div class="item" onclick="alert('Fornecedor Roupas 1')">
+                <img src="roupa1.png" alt="Camiseta 1">
+                <h3>Camiseta Premium</h3>
+                <p>Clique para ver fornecedor</p>
+            </div>
+            <div class="item" onclick="alert('Fornecedor Roupas 2')">
+                <img src="roupa2.png" alt="Moletom 2">
+                <h3>Moletom Oversized</h3>
+                <p>Clique para ver fornecedor</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="contato">
+        <h2>Contato</h2>
+        <p>Fale conosco no WhatsApp clicando no botão abaixo:</p>
+        <a href="https://wa.me/seunumerowhatsapp" target="_blank" style="background-color:#00ff55;color:#000;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:bold;">Chamar no WhatsApp</a>
+    </div>
+    <footer>
+        &copy; 2025 Fontes das Fontes. Todos os direitos reservados.
+    </footer>
+</body>
 </html>
