@@ -1,71 +1,77 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="Acesso aos melhores fornecedores de tênis, roupas e relógios com qualidade premium.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haype Connect | Fornecedores Premium</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
       background-color: #000;
-      color: #fff;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
     }
     header {
-      padding: 40px 20px;
       text-align: center;
+      padding: 30px 20px;
     }
     header h1 {
-      font-size: 2em;
       color: #00ff55;
+      font-size: 2em;
     }
     header p {
-      font-size: 1.1em;
       color: #ccc;
-      max-width: 700px;
-      margin: 0 auto;
+      font-size: 1.1em;
     }
-    .carousel-container {
+    .live-count {
+      background-color: #111;
+      color: #00ff55;
+      text-align: center;
+      padding: 8px;
+      font-weight: bold;
+    }
+    .carousel {
       display: flex;
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 20px;
       gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
     }
-    .product-card {
+    .item {
       background: #111;
-      border-radius: 12px;
-      padding: 15px;
+      border-radius: 16px;
+      padding: 20px;
       min-width: 280px;
+      max-width: 320px;
       flex: 0 0 auto;
       scroll-snap-align: start;
       text-align: center;
-      box-shadow: 0 0 10px rgba(0,255,85,0.2);
+      box-shadow: 0 0 10px rgba(0,255,85,0.3);
     }
-    .product-card img {
-      width: 100%;
-      border-radius: 10px;
+    .item img {
+      width: 90%;
+      border-radius: 12px;
+      background: transparent;
       animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 8px 8px rgba(0, 255, 85, 0.2));
     }
-    .product-card h3 {
+    .item h3 {
       color: #00ff55;
-      margin-top: 15px;
+      margin-top: 12px;
     }
-    .product-card p {
+    .item p {
       color: #ccc;
       font-size: 0.95em;
     }
     .cta-button {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
       background-color: #00ff55;
-      color: #000;
-      text-decoration: none;
+      color: black;
+      padding: 10px 18px;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
+      margin-top: 10px;
     }
     .floating-whatsapp {
       position: fixed;
@@ -86,7 +92,7 @@
       height: 30px;
     }
     .info-section {
-      padding: 40px 20px;
+      padding: 30px 20px;
       text-align: center;
     }
     .info-section h2 {
@@ -97,13 +103,6 @@
       max-width: 800px;
       margin: auto;
     }
-    .live-count {
-      text-align: center;
-      padding: 10px;
-      background-color: #111;
-      color: #00ff55;
-      font-weight: bold;
-    }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
@@ -111,33 +110,37 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
     <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>
-  </header>  <div class="live-count">⚡ 35 pessoas estão acessando agora</div>  <div class="carousel-container">
-    <div class="product-card">
-      <img src="tns.jpg" alt="Tênis 3D" />
-      <h3>Tênis Air Max</h3>
-      <p>Estilo, conforto e qualidade de verdade. Garanta agora.</p>
+  </header>
+
+  <div class="live-count">⚡ 35 pessoas estão acessando agora</div>
+
+  <div class="carousel">
+    <div class="item">
+      <img src="tns.jpg" alt="Tênis Air Max Plus">
+      <h3>Tênis Air Max Plus</h3>
+      <p>Estilo urbano, confortável, com amortecimento Air Max, material premium. A escolha certa pra quem vive o street.</p>
       <a class="cta-button" href="#">GARANTIR AGORA</a>
     </div>
-    <div class="product-card">
-      <img src="roupa2.jpg" alt="Roupa 3D" />
+    <div class="item">
+      <img src="roupa2.jpg" alt="Moletom Premium">
       <h3>Moletom Premium</h3>
-      <p>O oversized que os brabos usam. Conforto total e estilo pesado.</p>
+      <p>Conjunto Oversized Floral — tecido de qualidade, caimento perfeito e estilo único. Pra quem anda no hype de verdade.</p>
       <a class="cta-button" href="#">GARANTIR AGORA</a>
     </div>
-    <div class="product-card">
-      <img src="relogio3d.png" alt="Relógio 3D" />
-      <h3>Relógio de Luxo</h3>
-      <p>Presença de milhões com valor acessível. Clique e leve o seu.</p>
-      <a class="cta-button" href="#">GARANTIR AGORA</a>
-    </div>
-  </div>  <div class="info-section">
+  </div>
+
+  <div class="info-section">
     <h2>Sobre a Haype Connect</h2>
-    <p>A Haype Connect te conecta com fornecedores reais, de qualidade, com produtos premium direto da fonte. Sem enrolação, sem taxas abusivas. Aqui é só produto bom, com entrega rápida e suporte real.</p>
-  </div>  <a class="floating-whatsapp" href="https://wa.me/5542991229786" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+    <p>Conectamos você aos melhores fornecedores do mercado. Aqui é fornecedor real, sem enrolação. Produtos de altíssima qualidade, com entrega rápida e suporte total. Faça parte do hype agora mesmo.</p>
+  </div>
+
+  <a class="floating-whatsapp" href="https://wa.me/5542991229786" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
   </a>
+
 </body>
 </html>
