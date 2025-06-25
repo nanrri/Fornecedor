@@ -9,6 +9,7 @@
       color: white;
       font-family: Arial, sans-serif;
       margin: 0;
+      overflow-x: hidden;
     }
     header {
       text-align: center;
@@ -23,29 +24,31 @@
       font-size: 1.1em;
     }
     .notification {
-      background-color: #111;
-      color: #00ff55;
       position: fixed;
       bottom: 20px;
       left: 20px;
-      padding: 10px;
+      background-color: #111;
+      color: #00ff55;
+      padding: 10px 15px;
+      border-radius: 8px;
       font-weight: bold;
-      animation: scrollNames 15s linear infinite;
-      white-space: nowrap;
-      overflow: hidden;
+      font-size: 0.9em;
       z-index: 998;
-      max-width: 90%;
+      animation: fadeInOut 3s infinite;
     }
-    @keyframes scrollNames {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
     }
-    .content-section {
-      padding: 40px 20px;
+    .scroll-carousel {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 40px;
+      align-items: center;
+      padding: 40px 20px;
+      scroll-behavior: smooth;
     }
     .item {
       background: #111;
@@ -125,12 +128,30 @@
 <body>  <header>
     <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
     <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>
-  </header>  <div class="notification">Lucas garantiu agora • Ana garantiu agora • Pedro garantiu agora • Vitória garantiu agora • Marcos garantiu agora • Beatriz garantiu agora • João garantiu agora • Camila garantiu agora • Rafael garantiu agora • Larissa garantiu agora</div>  <div class="content-section">
+  </header>  <div class="notification" id="notificacao">Lucas garantiu agora</div>  <div class="scroll-carousel">
     <div class="item">
       <img src="tns.jpg" alt="Fornecedor Tênis Air Max Plus">
       <h3>Tênis Air Max Plus</h3>
       <p>Visual icônico e qualidade de revenda premium. Essa peça é uma das mais procuradas do momento. O fornecedor é confiável, entrega rápida e oferece variedade de cores e tamanhos. Ideal para quem quer lucrar com estilo.</p>
     </div><div class="item">
+  <img src="tnpreto.jpg" alt="TNS Preto">
+  <h3>Tênis TNS Preto</h3>
+  <p>Modelo todo preto, versátil e fácil de combinar com qualquer look. O fornecedor entrega rápido e com ótima qualidade de acabamento. Ideal pra revenda e lucro certo.</p>
+</div>
+
+<div class="item">
+  <img src="tnwhiteandblack.jpg" alt="TNS Branco com Preto">
+  <h3>Tênis TNS Branco & Preto</h3>
+  <p>Design clean e urbano, o mais vendido do mês. Estilo e conforto unidos. Estoque disponível direto com o fornecedor parceiro.</p>
+</div>
+
+<div class="item">
+  <img src="tnoreo.jpg" alt="TNS Oreo">
+  <h3>Tênis TNS Oreo</h3>
+  <p>O queridinho da galera. Esse modelo mistura preto e branco com detalhes exclusivos. Excelente aceitação e giro rápido para revenda!</p>
+</div>
+
+<div class="item">
   <img src="roupa2.jpg" alt="Fornecedor Moletom Premium">
   <h3>Moletom Oversized Premium</h3>
   <p>Perfeito para o estilo street. O fornecedor disponibiliza uma coleção completa, com tecidos de qualidade, caimento perfeito e modelos que seguem as últimas tendências. Excelente para revendedores iniciantes ou experientes.</p>
@@ -143,5 +164,12 @@
     <p>Conectamos você aos melhores fornecedores do mercado. Aqui é fornecedor real, sem enrolação. Produtos de altíssima qualidade, com entrega rápida e suporte total. Faça parte do hype agora mesmo.</p>
   </div>  <a class="floating-whatsapp" href="https://wa.me/5542991229786" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
-  </a></body>
+  </a>  <script>
+    const nomes = ["Lucas", "Ana", "Pedro", "Vitória", "Marcos", "Beatriz", "João", "Camila", "Rafael", "Larissa"];
+    let i = 0;
+    setInterval(() => {
+      document.getElementById("notificacao").textContent = nomes[i] + " garantiu o acesso";
+      i = (i + 1) % nomes.length;
+    }, 3000);
+  </script></body>
 </html>
