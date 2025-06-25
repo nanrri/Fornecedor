@@ -40,21 +40,19 @@
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-    .carousel {
+    .content-section {
+      padding: 40px 20px;
       display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 20px;
-      scroll-snap-type: x mandatory;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
     }
     .item {
       background: #111;
       border-radius: 16px;
       padding: 20px;
-      min-width: 280px;
-      max-width: 320px;
-      flex: 0 0 auto;
-      scroll-snap-align: start;
+      width: 90%;
+      max-width: 500px;
       text-align: center;
       box-shadow: 0 0 10px rgba(0,255,85,0.3);
     }
@@ -73,15 +71,20 @@
       color: #ccc;
       font-size: 0.95em;
     }
-    .cta-button {
+    .cta-final {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .cta-final a {
       display: inline-block;
       background-color: #00ff55;
       color: black;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 1.1em;
       font-weight: bold;
-      margin-top: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(0,255,85,0.4);
     }
     .floating-whatsapp {
       position: fixed;
@@ -122,19 +125,19 @@
 <body>  <header>
     <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
     <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>
-  </header>  <div class="notification">Lucas garantiu agora • Ana garantiu agora • Pedro garantiu agora • Vitória garantiu agora • Marcos garantiu agora • Beatriz garantiu agora • João garantiu agora • Camila garantiu agora • Rafael garantiu agora • Larissa garantiu agora</div>  <div class="carousel">
+  </header>  <div class="notification">Lucas garantiu agora • Ana garantiu agora • Pedro garantiu agora • Vitória garantiu agora • Marcos garantiu agora • Beatriz garantiu agora • João garantiu agora • Camila garantiu agora • Rafael garantiu agora • Larissa garantiu agora</div>  <div class="content-section">
     <div class="item">
       <img src="tns.jpg" alt="Fornecedor Tênis Air Max Plus">
-      <h3>Tênis Air Max Plus - Fornecedor Exclusivo</h3>
-      <p>Acesso direto ao fornecedor original desse modelo. Receba catálogo completo, suporte e novidades para revenda premium com alto lucro.</p>
-      <a class="cta-button" href="#">ACESSAR FORNECEDOR – R$19,30</a>
-    </div>
-    <div class="item">
-      <img src="roupa2.jpg" alt="Fornecedor Moletom Premium">
-      <h3>Moletom Oversized - Fornecedor Premium</h3>
-      <p>Conecte-se com o fornecedor desse moletom hype. Tenha acesso ao catálogo atualizado, suporte pra pedidos e os melhores preços do mercado.</p>
-      <a class="cta-button" href="#">ACESSAR FORNECEDOR – R$19,30</a>
-    </div>
+      <h3>Tênis Air Max Plus</h3>
+      <p>Visual icônico e qualidade de revenda premium. Essa peça é uma das mais procuradas do momento. O fornecedor é confiável, entrega rápida e oferece variedade de cores e tamanhos. Ideal para quem quer lucrar com estilo.</p>
+    </div><div class="item">
+  <img src="roupa2.jpg" alt="Fornecedor Moletom Premium">
+  <h3>Moletom Oversized Premium</h3>
+  <p>Perfeito para o estilo street. O fornecedor disponibiliza uma coleção completa, com tecidos de qualidade, caimento perfeito e modelos que seguem as últimas tendências. Excelente para revendedores iniciantes ou experientes.</p>
+</div>
+
+  </div>  <div class="cta-final">
+    <a href="#">🔒 ACESSAR TODOS OS FORNECEDORES – R$19,30</a>
   </div>  <div class="info-section">
     <h2>Sobre a Haype Connect</h2>
     <p>Conectamos você aos melhores fornecedores do mercado. Aqui é fornecedor real, sem enrolação. Produtos de altíssima qualidade, com entrega rápida e suporte total. Faça parte do hype agora mesmo.</p>
