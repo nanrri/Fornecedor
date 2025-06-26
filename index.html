@@ -52,21 +52,23 @@
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
       -webkit-overflow-scrolling: touch;
-      height: 100vh;
+      height: 80vh;
       align-items: center;
+      gap: 30px;
+      padding: 20px 0;
     }
     .item {
       scroll-snap-align: center;
-      flex: 0 0 100vh;
+      flex: 0 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 30px;
+      padding: 10px;
     }
     .item img {
-      max-height: 320px;
-      max-width: 90%;
+      width: 240px;
+      height: auto;
       object-fit: contain;
       background: transparent;
       animation: float 3s ease-in-out infinite;
@@ -74,19 +76,19 @@
     }
     .item h3 {
       color: #00ff55;
-      margin-top: 20px;
-      font-size: 1.5em;
+      margin-top: 15px;
+      font-size: 1.3em;
     }
     .item p {
       color: #ccc;
-      max-width: 80%;
+      max-width: 90%;
       text-align: center;
-      margin-top: 10px;
-      font-size: 1em;
+      margin-top: 8px;
+      font-size: 0.95em;
     }
     .cta-final {
       position: absolute;
-      bottom: 100px;
+      bottom: 60px;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
@@ -95,9 +97,9 @@
       display: inline-block;
       background-color: #00ff55;
       color: black;
-      padding: 14px 24px;
+      padding: 12px 22px;
       border-radius: 10px;
-      font-size: 1.1em;
+      font-size: 1em;
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 0 15px rgba(0,255,85,0.4);
@@ -107,8 +109,8 @@
       bottom: 20px;
       right: 20px;
       background-color: #00ff55;
-      width: 55px;
-      height: 55px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -117,8 +119,8 @@
       z-index: 999;
     }
     .floating-whatsapp img {
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -131,7 +133,7 @@
     <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>
   </header>  <div class="notification" id="notificacao">Lucas garantiu agora</div>  <div class="carousel-container">
     <div class="item">
-      <img src="tns.jpg" alt="Fornecedor Tênis Air Max Plus">
+      <img src="tns.png" alt="Fornecedor Tênis Air Max Plus">
       <h3>Tênis Air Max Plus</h3>
       <p>Visual icônico e qualidade de revenda premium. Essa peça é uma das mais procuradas do momento. O fornecedor é confiável, entrega rápida e oferece variedade de cores e tamanhos.</p>
     </div>
