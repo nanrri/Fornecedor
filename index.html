@@ -4,12 +4,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haype Connect | Fornecedores Premium</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       background-color: #000;
       color: white;
       font-family: Arial, sans-serif;
-      margin: 0;
-      overflow-x: hidden;
+      overflow: hidden;
     }
     header {
       text-align: center;
@@ -42,41 +46,48 @@
       90% { opacity: 1; }
       100% { opacity: 0; }
     }
-    .scroll-carousel {
+    .carousel-container {
       display: flex;
-      flex-direction: column;
-      gap: 40px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      height: 100vh;
       align-items: center;
-      padding: 40px 20px;
-      scroll-behavior: smooth;
     }
     .item {
-      background: #111;
-      border-radius: 16px;
-      padding: 20px;
-      width: 90%;
-      max-width: 500px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,255,85,0.3);
+      scroll-snap-align: center;
+      flex: 0 0 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
     }
     .item img {
-      width: 90%;
-      border-radius: 12px;
+      max-width: 70%;
+      height: auto;
       background: transparent;
       animation: float 3s ease-in-out infinite;
       filter: drop-shadow(0 8px 8px rgba(0, 255, 85, 0.2));
     }
     .item h3 {
       color: #00ff55;
-      margin-top: 12px;
+      margin-top: 20px;
+      font-size: 1.5em;
     }
     .item p {
       color: #ccc;
-      font-size: 0.95em;
+      max-width: 80%;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1em;
     }
     .cta-final {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
-      margin: 50px 0;
     }
     .cta-final a {
       display: inline-block;
@@ -107,18 +118,6 @@
       width: 30px;
       height: 30px;
     }
-    .info-section {
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .info-section h2 {
-      color: #00ff55;
-    }
-    .info-section p {
-      color: #ccc;
-      max-width: 800px;
-      margin: auto;
-    }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
@@ -128,40 +127,34 @@
 <body>  <header>
     <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
     <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>
-  </header>  <div class="notification" id="notificacao">Lucas garantiu agora</div>  <div class="scroll-carousel">
+  </header>  <div class="notification" id="notificacao">Lucas garantiu agora</div>  <div class="carousel-container">
     <div class="item">
       <img src="tns.jpg" alt="Fornecedor Tênis Air Max Plus">
       <h3>Tênis Air Max Plus</h3>
-      <p>Visual icônico e qualidade de revenda premium. Essa peça é uma das mais procuradas do momento. O fornecedor é confiável, entrega rápida e oferece variedade de cores e tamanhos. Ideal para quem quer lucrar com estilo.</p>
-    </div><div class="item">
-  <img src="tnpreto.jpg" alt="TNS Preto">
-  <h3>Tênis TNS Preto</h3>
-  <p>Modelo todo preto, versátil e fácil de combinar com qualquer look. O fornecedor entrega rápido e com ótima qualidade de acabamento. Ideal pra revenda e lucro certo.</p>
-</div>
-
-<div class="item">
-  <img src="tnwhiteandblack.jpg" alt="TNS Branco com Preto">
-  <h3>Tênis TNS Branco & Preto</h3>
-  <p>Design clean e urbano, o mais vendido do mês. Estilo e conforto unidos. Estoque disponível direto com o fornecedor parceiro.</p>
-</div>
-
-<div class="item">
-  <img src="tnoreo.jpg" alt="TNS Oreo">
-  <h3>Tênis TNS Oreo</h3>
-  <p>O queridinho da galera. Esse modelo mistura preto e branco com detalhes exclusivos. Excelente aceitação e giro rápido para revenda!</p>
-</div>
-
-<div class="item">
-  <img src="roupa2.jpg" alt="Fornecedor Moletom Premium">
-  <h3>Moletom Oversized Premium</h3>
-  <p>Perfeito para o estilo street. O fornecedor disponibiliza uma coleção completa, com tecidos de qualidade, caimento perfeito e modelos que seguem as últimas tendências. Excelente para revendedores iniciantes ou experientes.</p>
-</div>
-
+      <p>Visual icônico e qualidade de revenda premium. Essa peça é uma das mais procuradas do momento. O fornecedor é confiável, entrega rápida e oferece variedade de cores e tamanhos.</p>
+    </div>
+    <div class="item">
+      <img src="tnpreto.jpg" alt="TNS Preto">
+      <h3>Tênis TNS Preto</h3>
+      <p>Modelo todo preto, versátil e fácil de combinar com qualquer look. O fornecedor entrega rápido e com ótima qualidade de acabamento.</p>
+    </div>
+    <div class="item">
+      <img src="tnwhiteandblack.jpg" alt="TNS Branco com Preto">
+      <h3>Tênis TNS Branco & Preto</h3>
+      <p>Design clean e urbano, o mais vendido do mês. Estilo e conforto unidos. Estoque disponível direto com o fornecedor parceiro.</p>
+    </div>
+    <div class="item">
+      <img src="tnoreo.jpg" alt="TNS Oreo">
+      <h3>Tênis TNS Oreo</h3>
+      <p>O queridinho da galera. Esse modelo mistura preto e branco com detalhes exclusivos. Excelente aceitação e giro rápido para revenda!</p>
+    </div>
+    <div class="item">
+      <img src="roupa2.jpg" alt="Fornecedor Moletom Premium">
+      <h3>Moletom Oversized Premium</h3>
+      <p>Perfeito para o estilo street. Fornecedor com tecidos de qualidade e caimento perfeito. Ideal pra quem quer sair vendendo com lucro e estilo.</p>
+    </div>
   </div>  <div class="cta-final">
     <a href="#">🔒 ACESSAR TODOS OS FORNECEDORES – R$19,30</a>
-  </div>  <div class="info-section">
-    <h2>Sobre a Haype Connect</h2>
-    <p>Conectamos você aos melhores fornecedores do mercado. Aqui é fornecedor real, sem enrolação. Produtos de altíssima qualidade, com entrega rápida e suporte total. Faça parte do hype agora mesmo.</p>
   </div>  <a class="floating-whatsapp" href="https://wa.me/5542991229786" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
   </a>  <script>
