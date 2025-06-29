@@ -2,268 +2,143 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>O Segredo - Página de Vendas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Os Melhores Fornecedores</title>
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
     body {
-      background: linear-gradient(135deg, #000000, #0d0d0d);
-      color: #00ff99;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
       overflow-x: hidden;
-      min-height: 100vh;
+    }
+    h1, h2, h3 {
+      text-align: center;
+    }
+    h1 {
+      color: #00ff00;
+      margin-top: 20px;
+    }
+    p {
+      text-align: center;
+      padding: 0 20px;
+    }
+    .produto {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 60px;
+      margin: 40px 0;
     }
-    header {
-      background: #0a0a0a;
-      width: 100%;
-      padding: 12px 20px;
-      text-align: center;
-      color: #00ff99;
-      font-weight: 600;
-      box-shadow: 0 0 10px #00ff99;
-      font-size: 1.15rem;
-    }
-    h1 {
-      margin: 25px 0 5px;
-      font-size: 3rem;
-      color: #00ff00;
-      text-shadow: 0 0 10px #00ff00;
-    }
-    .subtitle {
-      color: #fff;
-      font-size: 1.2rem;
-      max-width: 600px;
-      text-align: center;
-      margin-bottom: 25px;
-      line-height: 1.5;
-      font-weight: 500;
-    }
-    .phone {
-      width: 220px;
-      height: 460px;
-      background: #111;
-      border-radius: 40px;
-      margin: 20px auto;
-      position: relative;
-      box-shadow: 0 0 20px #00ff99;
-      transform-style: preserve-3d;
-      animation: rotateY 12s linear infinite;
-      perspective: 1000px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    @keyframes rotateY {
-      0% { transform: rotateY(0deg); }
-      100% { transform: rotateY(360deg); }
-    }
-    .screen {
-      width: 180px;
-      height: 390px;
-      background: #000;
-      border-radius: 30px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 0 0 20px #00ff99;
-    }
-    .notification {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%) translateY(-100%);
-      background: rgba(0, 0, 0, 0.75);
-      border: 2px solid #00ff00;
-      color: #00ff00;
-      padding: 10px 18px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00ff00;
-      opacity: 0;
-      animation: drop 5s infinite;
-      white-space: nowrap;
-      font-weight: 600;
-      font-size: 0.9rem;
-      z-index: 10;
-      backdrop-filter: blur(4px);
-    }
-    @keyframes drop {
-      0% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
-      10% { transform: translateX(-50%) translateY(0); opacity: 1; }
-      50% { transform: translateX(-50%) translateY(0); opacity: 1; }
-      60% { transform: translateX(-50%) translateY(0); opacity: 0; }
-      100% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
-    }
-    .video {
-      max-width: 600px;
-      width: 90%;
-      margin: 20px auto;
-      box-shadow: 0 0 15px #00ff99aa;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-    video {
-      width: 100%;
+    .produto img {
+      width: 250px;
       height: auto;
+      margin-bottom: 10px;
+    }
+    .produto h2 {
+      color: #00ff00;
+      margin-bottom: 5px;
+    }
+    .produto p {
+      max-width: 300px;
+    }
+    .botao {
       display: block;
-      border-radius: 20px;
-    }
-    .btn {
-      background: #00ff00;
+      width: fit-content;
+      background-color: #00ff00;
       color: #000;
-      border: none;
-      padding: 15px 50px;
-      border-radius: 40px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: block;
-      margin: 20px auto;
+      padding: 15px 25px;
+      border-radius: 12px;
+      margin: 40px auto;
+      font-weight: bold;
+      text-decoration: none;
       box-shadow: 0 0 15px #00ff00;
-      transition: background 0.3s ease;
-      text-transform: uppercase;
-      max-width: 280px;
-      text-align: center;
     }
-    .btn:hover {
-      background: #00cc00;
-    }
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid #00ff00;
-      color: #00ff00;
-      max-width: 280px;
-      margin-bottom: 40px;
-    }
-    .btn-secondary:hover {
-      background: #00ff00;
-      color: #000;
-    }
-    .faq {
-      max-width: 800px;
-      width: 90%;
-      margin: 40px auto 80px;
-    }
-    .faq-item {
-      background: #111;
-      border: 2px solid #00ff00;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      padding: 15px 20px;
-      cursor: pointer;
-      user-select: none;
-    }
-    .faq-question {
-      font-weight: 700;
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.1rem;
-      color: #00ff00;
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      color: #fff;
-      margin-top: 10px;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-    }
-    .faq-item.active .faq-question span {
-      transform: rotate(45deg);
-      transition: transform 0.3s ease;
-    }
-    /* Nomes compradores no canto inferior esquerdo */
-    .buyers {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(0,0,0,0.8);
-      color: #00ff00;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-size: 1rem;
-      font-weight: 600;
-      box-shadow: 0 0 15px #00ff00;
-      max-width: 220px;
-      height: 40px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .buyers span {
-      opacity: 0;
-      animation: fadeInOut 5s infinite;
-      position: absolute;
-    }
-    @keyframes fadeInOut {
-      0%, 20% { opacity: 0; }
-      30%, 70% { opacity: 1; }
-      80%, 100% { opacity: 0; }
-    }
-    /* Botão WhatsApp canto inferior direito */
     .whatsapp {
       position: fixed;
-      bottom: 20px;
       right: 20px;
+      bottom: 20px;
+      background-color: #25d366;
       width: 60px;
-      cursor: pointer;
-      filter: drop-shadow(0 0 5px #00ff00);
-      transition: transform 0.3s ease;
-      z-index: 100;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px #25d366;
     }
-    .whatsapp:hover {
-      transform: scale(1.1);
+    .whatsapp img {
+      width: 35px;
+      height: 35px;
     }
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      .phone { width: 180px; height: 380px; }
-      .screen { width: 150px; height: 330px; }
-      .btn, .btn-secondary { max-width: 90vw; }
-      .buyers { max-width: 150px; font-size: 0.9rem; height: 35px; }
-      .whatsapp { width: 50px; }
+    .notificacao {
+      position: fixed;
+      left: 10px;
+      bottom: 20px;
+      background-color: #111;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #00ff00;
+      box-shadow: 0 0 8px #00ff00;
+      animation: fade 20s infinite;
+    }
+    @keyframes fade {
+      0%, 100% { opacity: 0; }
+      10%, 90% { opacity: 1; }
     }
   </style>
 </head>
 <body>
+  <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
+  <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>
 
-<header>O Segredo — O guia definitivo pra você faturar pesado no orgânico.</header>
-
-<h1>O Segredo</h1>
-<div class="subtitle">Descubra 30 estratégias que os grandes nunca te contaram para faturar no orgânico, sem precisar investir em anúncios.</div>
-
-<div class="phone" aria-label="Animação de celular">
-  <div class="screen" aria-live="polite" aria-atomic="true">
-    <div class="notification" id="notification"></div>
+  <div class="produto">
+    <img src="Tnbranco.png" alt="TNS Branco" />
+    <h2>Tênis TNS Branco</h2>
+    <p>Design limpo e muito procurado para revenda. Excelente giro e qualidade premium.</p>
   </div>
-</div>
 
-<div class="video">
-  <video src="video.mp4" controls></video>
-</div>
+  <div class="produto">
+    <img src="blackwhite.png" alt="TNS Preto & Branco" />
+    <h2>Tênis TNS Preto & Branco</h2>
+    <p>Um dos mais vendidos do mês. Estilo urbano com conforto e durabilidade.</p>
+  </div>
 
-<button class="btn" onclick="window.open('https://pay.kiwify.com.br/1hpTVDK', '_blank')">QUERO AGORA</button>
-<button class="btn btn-secondary" onclick="window.location.href='oferta.html'">NÃO INTERESSADO</button>
+  <div class="produto">
+    <img src="tnpreto.png" alt="TNS Preto" />
+    <h2>Tênis TNS Preto</h2>
+    <p>Versátil, combina com qualquer look. Pronto para girar rápido na revenda.</p>
+  </div>
 
-<div class="faq" role="region" aria-label="Perguntas frequentes">
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">O que vou aprender?<span>+</span></div>
-    <div class="faq-answer">Os 30 segredos mais guardados do marketing orgânico, que os grandes não querem que você saiba.</div>
+  <div class="produto">
+    <img src="oreo.png" alt="TNS Oreo" />
+    <h2>Tênis TNS Oreo</h2>
+    <p>Mix de preto com branco em design exclusivo. Modelo desejado e confiável para revenda.</p>
   </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Preciso ter experiência?<span>+</span></div>
-    <div class="faq-answer">Não. É um passo a passo prático, direto e simples até pra quem nunca começou.</div>
+
+  <div class="produto">
+    <img src="moletoM.png" alt="Moletom Premium" />
+    <h2>Moletom Oversized Premium</h2>
+    <p>Confortável e estiloso para o streetwear. Ótimo giro com fornecedores confiáveis.</p>
   </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Quanto tempo leva pra ter resultado?<span>+</span></div>
-    <div class="faq-answer">Em até 30 dias aplicando, você já pode começar a ter resultados reais.</div>
+
+  <a class="botao" href="#">🔒 ACESSAR TODOS OS FORNECEDORES – R$19,30</a>
+
+  <div class="whatsapp">
+    <a href="https://wa.me/5542991229786" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
   </div>
-  <div class
+
+  <div class="notificacao" id="notificacao"></div>
+
+  <script>
+    const nomes = ["Lucas", "Amanda", "Felipe", "Bruna", "Rafael", "Camila", "João", "Isabela", "Pedro", "Lívia"];
+    let idx = 0;
+    setInterval(() => {
+      document.getElementById("notificacao").textContent = `${nomes[idx]} garantiu o acesso`;
+      idx = (idx + 1) % nomes.length;
+    }, 4000);
+  </script>
+</body>
+</html>
