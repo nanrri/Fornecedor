@@ -1,172 +1,269 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haype Connect | Fornecedores Premium</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>O Segredo - Página de Vendas</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
     body {
-      background-color: #000;
-      color: white;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
+      background: linear-gradient(135deg, #000000, #0d0d0d);
+      color: #00ff99;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 60px;
     }
     header {
+      background: #0a0a0a;
+      width: 100%;
+      padding: 12px 20px;
       text-align: center;
-      padding: 30px 20px;
+      color: #00ff99;
+      font-weight: 600;
+      box-shadow: 0 0 10px #00ff99;
+      font-size: 1.15rem;
     }
-    header h1 {
-      color: #00ff55;
-      font-size: 2em;
+    h1 {
+      margin: 25px 0 5px;
+      font-size: 3rem;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00;
     }
-    header p {
-      color: #ccc;
-      font-size: 1.1em;
+    .subtitle {
+      color: #fff;
+      font-size: 1.2rem;
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .phone {
+      width: 220px;
+      height: 460px;
+      background: #111;
+      border-radius: 40px;
+      margin: 20px auto;
+      position: relative;
+      box-shadow: 0 0 20px #00ff99;
+      transform-style: preserve-3d;
+      animation: rotateY 12s linear infinite;
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes rotateY {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+    .screen {
+      width: 180px;
+      height: 390px;
+      background: #000;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 20px #00ff99;
     }
     .notification {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100%);
+      background: rgba(0, 0, 0, 0.75);
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      padding: 10px 18px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff00;
+      opacity: 0;
+      animation: drop 5s infinite;
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: 0.9rem;
+      z-index: 10;
+      backdrop-filter: blur(4px);
+    }
+    @keyframes drop {
+      0% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
+      10% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      50% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      60% { transform: translateX(-50%) translateY(0); opacity: 0; }
+      100% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
+    }
+    .video {
+      max-width: 600px;
+      width: 90%;
+      margin: 20px auto;
+      box-shadow: 0 0 15px #00ff99aa;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+    }
+    .btn {
+      background: #00ff00;
+      color: #000;
+      border: none;
+      padding: 15px 50px;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 0 15px #00ff00;
+      transition: background 0.3s ease;
+      text-transform: uppercase;
+      max-width: 280px;
+      text-align: center;
+    }
+    .btn:hover {
+      background: #00cc00;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      max-width: 280px;
+      margin-bottom: 40px;
+    }
+    .btn-secondary:hover {
+      background: #00ff00;
+      color: #000;
+    }
+    .faq {
+      max-width: 800px;
+      width: 90%;
+      margin: 40px auto 80px;
+    }
+    .faq-item {
+      background: #111;
+      border: 2px solid #00ff00;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-question {
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      color: #00ff00;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #fff;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+    /* Nomes compradores no canto inferior esquerdo */
+    .buyers {
       position: fixed;
       bottom: 20px;
       left: 20px;
-      background-color: #111;
-      color: #00ff55;
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 0.9em;
-      z-index: 998;
-      animation: fadeInOut 3s infinite;
-    }
-    @keyframes fadeInOut {
-      0% { opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    .carousel-container {
+      background: rgba(0,0,0,0.8);
+      color: #00ff00;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 0 15px #00ff00;
+      max-width: 220px;
+      height: 40px;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      -webkit-overflow-scrolling: touch;
-      height: 80vh;
-      align-items: center;
-      gap: 30px;
-      padding: 20px 0;
-    }
-    .item {
-      scroll-snap-align: center;
-      flex: 0 0 auto;
-      display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 10px;
     }
-    .item img {
-      width: 240px;
-      height: auto;
-      object-fit: contain;
-      background: transparent;
-      animation: float 3s ease-in-out infinite;
-      filter: drop-shadow(0 8px 8px rgba(0, 255, 85, 0.2));
-    }
-    .item h3 {
-      color: #00ff55;
-      margin-top: 15px;
-      font-size: 1.3em;
-    }
-    .item p {
-      color: #ccc;
-      max-width: 90%;
-      text-align: center;
-      margin-top: 8px;
-      font-size: 0.95em;
-    }
-    .cta-final {
+    .buyers span {
+      opacity: 0;
+      animation: fadeInOut 5s infinite;
       position: absolute;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
     }
-    .cta-final a {
-      display: inline-block;
-      background-color: #00ff55;
-      color: black;
-      padding: 12px 22px;
-      border-radius: 10px;
-      font-size: 1em;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 0 15px rgba(0,255,85,0.4);
+    @keyframes fadeInOut {
+      0%, 20% { opacity: 0; }
+      30%, 70% { opacity: 1; }
+      80%, 100% { opacity: 0; }
     }
-    .floating-whatsapp {
+    /* Botão WhatsApp canto inferior direito */
+    .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #00ff55;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 15px rgba(0,255,85,0.4);
-      z-index: 999;
+      width: 60px;
+      cursor: pointer;
+      filter: drop-shadow(0 0 5px #00ff00);
+      transition: transform 0.3s ease;
+      z-index: 100;
     }
-    .floating-whatsapp img {
-      width: 26px;
-      height: 26px;
+    .whatsapp:hover {
+      transform: scale(1.1);
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .phone { width: 180px; height: 380px; }
+      .screen { width: 150px; height: 330px; }
+      .btn, .btn-secondary { max-width: 90vw; }
+      .buyers { max-width: 150px; font-size: 0.9rem; height: 35px; }
+      .whatsapp { width: 50px; }
     }
   </style>
 </head>
-<body>  <header>
-    <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
-    <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>
-  </header>  <div class="notification" id="notificacao">Lucas garantiu agora</div>  <div class="carousel-container">
-    <div class="item">
-      <img src="tns.png" alt="Fornecedor Tênis Air Max Plus">
-      <h3>Tênis Air Max Plus</h3>
-      <p>Visual icônico e qualidade de revenda premium. Essa peça é uma das mais procuradas do momento. O fornecedor é confiável, entrega rápida e oferece variedade de cores e tamanhos.</p>
-    </div>
-    <div class="item">
-      <img src="tnpreto.png" alt="TNS Preto">
-      <h3>Tênis TNS Preto</h3>
-      <p>Modelo todo preto, versátil e fácil de combinar com qualquer look. O fornecedor entrega rápido e com ótima qualidade de acabamento.</p>
-    </div>
-    <div class="item">
-      <img src="tnwhiteandblack.png" alt="TNS Branco com Preto">
-      <h3>Tênis TNS Branco & Preto</h3>
-      <p>Design clean e urbano, o mais vendido do mês. Estilo e conforto unidos. Estoque disponível direto com o fornecedor parceiro.</p>
-    </div>
-    <div class="item">
-      <img src="tnoreo.png" alt="TNS Oreo">
-      <h3>Tênis TNS Oreo</h3>
-      <p>O queridinho da galera. Esse modelo mistura preto e branco com detalhes exclusivos. Excelente aceitação e giro rápido para revenda!</p>
-    </div>
-    <div class="item">
-      <img src="roupa2.png" alt="Fornecedor Moletom Premium">
-      <h3>Moletom Oversized Premium</h3>
-      <p>Perfeito para o estilo street. Fornecedor com tecidos de qualidade e caimento perfeito. Ideal pra quem quer sair vendendo com lucro e estilo.</p>
-    </div>
-  </div>  <div class="cta-final">
-    <a href="#">🔒 ACESSAR TODOS OS FORNECEDORES – R$19,30</a>
-  </div>  <a class="floating-whatsapp" href="https://wa.me/5542991229786" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
-  </a>  <script>
-    const nomes = ["Lucas", "Ana", "Pedro", "Vitória", "Marcos", "Beatriz", "João", "Camila", "Rafael", "Larissa"];
-    let i = 0;
-    setInterval(() => {
-      document.getElementById("notificacao").textContent = nomes[i] + " garantiu o acesso";
-      i = (i + 1) % nomes.length;
-    }, 3000);
-  </script></body>
-</html>
+<body>
+
+<header>O Segredo — O guia definitivo pra você faturar pesado no orgânico.</header>
+
+<h1>O Segredo</h1>
+<div class="subtitle">Descubra 30 estratégias que os grandes nunca te contaram para faturar no orgânico, sem precisar investir em anúncios.</div>
+
+<div class="phone" aria-label="Animação de celular">
+  <div class="screen" aria-live="polite" aria-atomic="true">
+    <div class="notification" id="notification"></div>
+  </div>
+</div>
+
+<div class="video">
+  <video src="video.mp4" controls></video>
+</div>
+
+<button class="btn" onclick="window.open('https://pay.kiwify.com.br/1hpTVDK', '_blank')">QUERO AGORA</button>
+<button class="btn btn-secondary" onclick="window.location.href='oferta.html'">NÃO INTERESSADO</button>
+
+<div class="faq" role="region" aria-label="Perguntas frequentes">
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">O que vou aprender?<span>+</span></div>
+    <div class="faq-answer">Os 30 segredos mais guardados do marketing orgânico, que os grandes não querem que você saiba.</div>
+  </div>
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Preciso ter experiência?<span>+</span></div>
+    <div class="faq-answer">Não. É um passo a passo prático, direto e simples até pra quem nunca começou.</div>
+  </div>
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Quanto tempo leva pra ter resultado?<span>+</span></div>
+    <div class="faq-answer">Em até 30 dias aplicando, você já pode começar a ter resultados reais.</div>
+  </div>
+  <div class
