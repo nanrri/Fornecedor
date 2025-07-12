@@ -22,24 +22,36 @@
 }
 
 .roleta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  overflow-y: scroll;
-  height: 200px;
   width: 200px;
+  height: 200px;
   margin: 0 auto 30px auto;
+  overflow: hidden;
+  position: relative;
   border: 2px solid #00ff00;
   border-radius: 15px;
-  padding: 10px;
   background-color: #111;
 }
 
-.roleta img {
+.roleta-inner {
+  display: flex;
+  flex-direction: column;
+  animation: rolar 20s linear infinite;
+}
+
+.roleta-inner img {
   width: 150px;
   height: auto;
   object-fit: contain;
+  margin: 20px auto;
+}
+
+@keyframes rolar {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(-200px); }
+  40% { transform: translateY(-400px); }
+  60% { transform: translateY(-600px); }
+  80% { transform: translateY(-800px); }
+  100% { transform: translateY(0); }
 }
 
 .descricao {
@@ -94,11 +106,13 @@
 <body>
   <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
   <p class="subtitulo">Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>  <div class="roleta">
-    <img src="Tnbranco.png" alt="Tênis Branco" />
-    <img src="blackwhite.png" alt="Tênis Preto e Branco" />
-    <img src="tnpreto.png" alt="Tênis Preto" />
-    <img src="oreo.png" alt="Tênis Oreo" />
-    <img src="moletoM.png" alt="Moletom Premium" />
+    <div class="roleta-inner">
+      <img src="Tnbranco.png" alt="Tênis Branco" />
+      <img src="blackwhite.png" alt="Tênis Preto e Branco" />
+      <img src="tnpreto.png" alt="Tênis Preto" />
+      <img src="oreo.png" alt="Tênis Oreo" />
+      <img src="moletoM.png" alt="Moletom Premium" />
+    </div>
   </div>  <div class="descricao">
     <h2>Tênis Air Max Plus</h2>
     <p>Visual icônico e qualidade de revenda premium. Fornecedor confiável, entrega rápida e variedade de cores.</p>
