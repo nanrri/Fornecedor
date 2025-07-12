@@ -2,125 +2,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Os Melhores Fornecedores</title>
+  <title>Fornecedores Premium</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
       background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    h1, h2, h3 {
+      color: white;
+      font-family: Arial, sans-serif;
       text-align: center;
-    }
-    h1 {
-      color: #00ff00;
-      margin-top: 20px;
-    }
-    p {
-      text-align: center;
-      padding: 0 20px;
-    }
-    .produto {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 40px 0;
-    }
-    .produto img {
-      width: 250px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .produto h2 {
-      color: #00ff00;
-      margin-bottom: 5px;
-    }
-    .produto p {
-      max-width: 300px;
-    }
-    .botao {
-      display: block;
-      width: fit-content;
-      background-color: #00ff00;
-      color: #000;
-      padding: 15px 25px;
-      border-radius: 12px;
-      margin: 40px auto;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 0 15px #00ff00;
-    }
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background-color: #25d366;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 10px #25d366;
-    }
-    .whatsapp img {
-      width: 35px;
-      height: 35px;
-    }
-    .notificacao {
-      position: fixed;
-      left: 10px;
-      bottom: 20px;
-      background-color: #111;
-      border-radius: 8px;
-      padding: 8px 12px;
-      font-size: 14px;
-      color: #00ff00;
-      box-shadow: 0 0 8px #00ff00;
-      animation: fade 20s infinite;
-    }
-    @keyframes fade {
-      0%, 100% { opacity: 0; }
-      10%, 90% { opacity: 1; }
-    }
+    }h1 {
+  color: #00ff00;
+  margin-top: 20px;
+}
+
+.subtitulo {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.roleta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  overflow-y: scroll;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto 30px auto;
+  border: 2px solid #00ff00;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #111;
+}
+
+.roleta img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.descricao {
+  margin-bottom: 40px;
+}
+
+.descricao h2 {
+  color: #00ff00;
+  margin-bottom: 5px;
+}
+
+.descricao p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 0 10px;
+}
+
+.botao-compra {
+  background-color: #00ff00;
+  color: black;
+  font-weight: bold;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.notificacao {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: #00ff00;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 13px;
+  animation: fadeinout 10s linear infinite;
+}
+
+@keyframes fadeinout {
+  0% {opacity: 0;}
+  10% {opacity: 1;}
+  90% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
   </style>
 </head>
 <body>
   <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
-  <p>Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>  <div class="produto">
-    <img src="Tnbranco.png" alt="TNS Branco" />
-    <h2>Tênis TNS Branco</h2>
-    <p>Design limpo e muito procurado para revenda. Excelente giro e qualidade premium.</p>
-  </div>  <div class="produto">
-    <img src="blackwhite.png" alt="TNS Preto & Branco" />
-    <h2>Tênis TNS Preto & Branco</h2>
-    <p>Um dos mais vendidos do mês. Estilo urbano com conforto e durabilidade.</p>
-  </div>  <div class="produto">
-    <img src="tnpreto.png" alt="TNS Preto" />
-    <h2>Tênis TNS Preto</h2>
-    <p>Versátil, combina com qualquer look. Pronto para girar rápido na revenda.</p>
-  </div>  <div class="produto">
-    <img src="oreo.png" alt="TNS Oreo" />
-    <h2>Tênis TNS Oreo</h2>
-    <p>Mix de preto com branco em design exclusivo. Modelo desejado e confiável para revenda.</p>
-  </div>  <div class="produto">
+  <p class="subtitulo">Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>  <div class="roleta">
+    <img src="Tnbranco.png" alt="Tênis Branco" />
+    <img src="blackwhite.png" alt="Tênis Preto e Branco" />
+    <img src="tnpreto.png" alt="Tênis Preto" />
+    <img src="oreo.png" alt="Tênis Oreo" />
     <img src="moletoM.png" alt="Moletom Premium" />
+  </div>  <div class="descricao">
+    <h2>Tênis Air Max Plus</h2>
+    <p>Visual icônico e qualidade de revenda premium. Fornecedor confiável, entrega rápida e variedade de cores.</p>
+    <h2>Tênis TNS Preto</h2>
+    <p>Modelo todo preto, versátil e fácil de combinar. Qualidade de acabamento e entrega rápida.</p>
+    <h2>Tênis TNS Branco & Preto</h2>
+    <p>Design clean, estilo urbano e o mais vendido do mês. Estoque direto com o fornecedor.</p>
+    <h2>Tênis TNS Oreo</h2>
+    <p>Queridinho da galera. Mistura preto e branco com detalhes únicos. Giro rápido na revenda.</p>
     <h2>Moletom Oversized Premium</h2>
-    <p>Confortável e estiloso para o streetwear. Ótimo giro com fornecedores confiáveis.</p>
-  </div><a class="botao" href="#">🔒 ACESSAR TODOS OS FORNECEDORES – R$19,30</a>
+    <p>Estilo street, tecidos de qualidade e caimento perfeito. Lucro garantido na revenda premium.</p>
+  </div><button class="botao-compra">🔒 ACESSAR TODOS OS FORNECEDORES – R$19,30</button>
 
-  <div class="whatsapp">
-    <a href="https://wa.me/5542991229786" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-  </div>  <div class="notificacao" id="notificacao"></div>  <script>
-    const nomes = ["Lucas", "Amanda", "Felipe", "Bruna", "Rafael", "Camila", "João", "Isabela", "Pedro", "Lívia"];
-    let idx = 0;
+  <div class="notificacao" id="notificacao">Lucas garantiu o acesso</div>  <script>
+    const nomes = [
+      "Lucas", "Maria", "João", "Fernanda", "Carlos", "Aline",
+      "Rafael", "Patrícia", "Bruno", "Juliana"
+    ];
+
+    let index = 0;
     setInterval(() => {
-      document.getElementById("notificacao").textContent = `${nomes[idx]} garantiu o acesso`;
-      idx = (idx + 1) % nomes.length;
-    }, 4000);
+      document.getElementById("notificacao").innerText = `${nomes[index]} garantiu o acesso`;
+      index = (index + 1) % nomes.length;
+    }, 5000);
   </script></body>
 </html>
