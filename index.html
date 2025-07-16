@@ -1,141 +1,97 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fornecedores Premium</title>
+  <title>Roleta de Tênis</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: white;
+      background: url('https://images.unsplash.com/photo-1608561425335-e1c5b3051ef6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
       font-family: Arial, sans-serif;
-      text-align: center;
-    }h1 {
-  color: #00ff00;
-  margin-top: 20px;
-}
-
-.subtitulo {
-  color: #ccc;
-  margin-bottom: 10px;
-}
-
-.roleta {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 30px auto;
+      overflow: hidden;
+    }.carousel-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
   overflow: hidden;
-  position: relative;
-  border: 2px solid #00ff00;
-  border-radius: 15px;
-  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
 }
 
-.roleta-inner {
+.carousel {
   display: flex;
   flex-direction: column;
-  animation: rolar 20s linear infinite;
+  animation: slide 25s infinite linear;
+  align-items: center;
 }
 
-.roleta-inner img {
-  width: 150px;
+.carousel-item {
+  width: 260px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  background: transparent;
+}
+
+.carousel-item img {
+  max-width: 100%;
   height: auto;
-  object-fit: contain;
-  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 100, 0.5);
 }
 
-@keyframes rolar {
-  0% { transform: translateY(0); }
-  20% { transform: translateY(-200px); }
-  40% { transform: translateY(-400px); }
-  60% { transform: translateY(-600px); }
-  80% { transform: translateY(-800px); }
+.carousel-item span {
+  margin-top: 10px;
+  color: #00ff9d;
+  font-weight: bold;
+  text-shadow: 0 0 10px black;
+}
+
+@keyframes slide {
+  0%, 15% { transform: translateY(0); }
+  20%, 35% { transform: translateY(-320px); }
+  40%, 55% { transform: translateY(-640px); }
+  60%, 75% { transform: translateY(-960px); }
+  80%, 95% { transform: translateY(-1280px); }
   100% { transform: translateY(0); }
-}
-
-.descricao {
-  margin-bottom: 40px;
-}
-
-.descricao h2 {
-  color: #00ff00;
-  margin-bottom: 5px;
-}
-
-.descricao p {
-  font-size: 14px;
-  color: #ccc;
-  margin: 0 10px;
-}
-
-.botao-compra {
-  background-color: #00ff00;
-  color: black;
-  font-weight: bold;
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 40px;
-}
-
-.notificacao {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  background-color: #00ff00;
-  color: black;
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 13px;
-  animation: fadeinout 10s linear infinite;
-}
-
-@keyframes fadeinout {
-  0% {opacity: 0;}
-  10% {opacity: 1;}
-  90% {opacity: 1;}
-  100% {opacity: 0;}
 }
 
   </style>
 </head>
 <body>
-  <h1>QUALIDADE DE VERDADE SÓ TEM AQUI</h1>
-  <p class="subtitulo">Os melhores fornecedores do mercado — Roupas, Tênis e Relógios Premium com acesso imediato.</p>  <div class="roleta">
-    <div class="roleta-inner">
-      <img src="Tnbranco.png" alt="Tênis Branco" />
-      <img src="blackwhite.png" alt="Tênis Preto e Branco" />
-      <img src="tnpreto.png" alt="Tênis Preto" />
-      <img src="oreo.png" alt="Tênis Oreo" />
-      <img src="moletoM.png" alt="Moletom Premium" />
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="Tnbranco.png" alt="Tênis Branco" />
+        <span>Tênis Branco</span>
+      </div>
+      <div class="carousel-item">
+        <img src="blackwhite.png" alt="Black White" />
+        <span>Black White</span>
+      </div>
+      <div class="carousel-item">
+        <img src="moletoM.png" alt="Moletom M" />
+        <span>Moletom M</span>
+      </div>
+      <div class="carousel-item">
+        <img src="oreo.png" alt="Tênis Oreo" />
+        <span>Tênis Oreo</span>
+      </div>
+      <div class="carousel-item">
+        <img src="tnpreto.png" alt="Tênis Preto" />
+        <span>Tênis Preto</span>
+      </div>
     </div>
-  </div>  <div class="descricao">
-    <h2>Tênis Air Max Plus</h2>
-    <p>Visual icônico e qualidade de revenda premium. Fornecedor confiável, entrega rápida e variedade de cores.</p>
-    <h2>Tênis TNS Preto</h2>
-    <p>Modelo todo preto, versátil e fácil de combinar. Qualidade de acabamento e entrega rápida.</p>
-    <h2>Tênis TNS Branco & Preto</h2>
-    <p>Design clean, estilo urbano e o mais vendido do mês. Estoque direto com o fornecedor.</p>
-    <h2>Tênis TNS Oreo</h2>
-    <p>Queridinho da galera. Mistura preto e branco com detalhes únicos. Giro rápido na revenda.</p>
-    <h2>Moletom Oversized Premium</h2>
-    <p>Estilo street, tecidos de qualidade e caimento perfeito. Lucro garantido na revenda premium.</p>
-  </div><button class="botao-compra">🔒 ACESSAR TODOS OS FORNECEDORES – R$19,30</button>
-
-  <div class="notificacao" id="notificacao">Lucas garantiu o acesso</div>  <script>
-    const nomes = [
-      "Lucas", "Maria", "João", "Fernanda", "Carlos", "Aline",
-      "Rafael", "Patrícia", "Bruno", "Juliana"
-    ];
-
-    let index = 0;
-    setInterval(() => {
-      document.getElementById("notificacao").innerText = `${nomes[index]} garantiu o acesso`;
-      index = (index + 1) % nomes.length;
-    }, 5000);
-  </script></body>
+  </div>
+</body>
 </html>
