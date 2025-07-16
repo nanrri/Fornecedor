@@ -1,84 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roleta de Tênis</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('galaxy-neon-green.jpg') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1608561425335-e1c5b3051ef6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      color: white;
     }
 
-    .roleta-container {
-      width: 250px;
-      height: 250px;
+    .carousel-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 400px;
+      overflow-y: scroll;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      animation: fade 2s infinite ease-in-out alternate;
+      align-items: center;
+      scrollbar-width: none; /* Firefox */
     }
 
-    .roleta-container img {
-      width: 200px;
+    .carousel-container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .carousel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel-item {
+      width: 260px;
+      margin: 20px 0;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-item img {
+      max-width: 100%;
       height: auto;
-      object-fit: contain;
-      animation: fadein 1s ease-in-out;
+      border-radius: 20px;
     }
 
-    @keyframes fadein {
-      0% { opacity: 0; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes fade {
-      0% { opacity: 0.6; }
-      100% { opacity: 1; }
-    }
-
-    .nome-do-tenis {
+    .carousel-item span {
       margin-top: 10px;
-      font-size: 18px;
+      color: #00ff9d;
       font-weight: bold;
-      text-align: center;
-      color: #7fffdf;
-      text-shadow: 0 0 10px #00ffae;
+      text-shadow: 0 0 10px black;
     }
   </style>
 </head>
 <body>
-  <div class="roleta-container">
-    <img id="imagem" src="Tnbranco.png" alt="Tênis">
-    <div class="nome-do-tenis" id="nome">Tnbranco</div>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="Tnbranco.png" alt="Tênis Branco" />
+        <span>Tênis Branco</span>
+      </div>
+      <div class="carousel-item">
+        <img src="blackwhite.png" alt="Black White" />
+        <span>Black White</span>
+      </div>
+      <div class="carousel-item">
+        <img src="moletoM.png" alt="Moletom M" />
+        <span>Moletom M</span>
+      </div>
+      <div class="carousel-item">
+        <img src="oreo.png" alt="Tênis Oreo" />
+        <span>Tênis Oreo</span>
+      </div>
+      <div class="carousel-item">
+        <img src="tnpreto.png" alt="Tênis Preto" />
+        <span>Tênis Preto</span>
+      </div>
+    </div>
   </div>
-
-  <script>
-    const imagens = [
-      { src: "Tnbranco.png", nome: "Tnbranco" },
-      { src: "blackwhite.png", nome: "Black White" },
-      { src: "moletoM.png", nome: "Moletom M" },
-      { src: "oreo.png", nome: "Oreo" },
-      { src: "tnpreto.png", nome: "TN Preto" }
-    ];
-
-    let index = 0;
-    const imagem = document.getElementById("imagem");
-    const nome = document.getElementById("nome");
-
-    setInterval(() => {
-      index = (index + 1) % imagens.length;
-      imagem.src = imagens[index].src;
-      nome.textContent = imagens[index].nome;
-    }, 2500); // Troca a cada 2.5 segundos
-  </script>
 </body>
 </html>
